@@ -1,270 +1,157 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risna | Portofolio Pelajar Teknologi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Risna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: radial-gradient(circle at top, #0f172a, #1e293b);
-      color: #f1f5f9;
-      overflow: hidden;
-    }
-
+    * {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; scroll-behavior:smooth;}
+    body {background:#0f172a; color:#f1f5f9; overflow-x:hidden;}
     header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 100;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      position:fixed; top:0; width:100%; background:rgba(15,23,42,0.9);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 40px; z-index:1000; backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
     }
-
-    header h1 {
-      color: #38bdf8;
-      font-weight: 600;
-    }
-
+    header h1 {font-size:1.5rem; color:#38bdf8; font-weight:600;}
     nav a {
-      color: #f1f5f9;
-      margin: 0 12px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-weight: 500;
+      margin-left:25px; color:#cbd5e1; text-decoration:none; font-weight:500;
+      transition:color .3s, transform .3s;
     }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
+    nav a:hover, nav a.active {color:#38bdf8; transform:scale(1.1);}
     section {
-      height: 100vh;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-      transition: all 0.5s ease;
+      min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+      align-items:center; text-align:center; padding:80px 20px;
+      opacity:0; transform:translateY(40px); transition:all .8s ease-out;
     }
-
-    section.active {
-      display: flex;
-      animation: fadeIn 1s ease;
+    section.visible {opacity:1; transform:translateY(0);}
+    h2 {color:#38bdf8; font-size:2rem; margin-bottom:20px;}
+    p {max-width:800px; line-height:1.8; font-size:1.05rem; color:#cbd5e1;}
+    /* Skills */
+    #skills .skills-container {
+      display:flex; flex-wrap:wrap; justify-content:center; margin-top:30px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      color: #38bdf8;
-      margin-bottom: 0.8rem;
-      text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-    }
-
-    .hero p {
-      max-width: 650px;
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #38bdf8, #7dd3fc);
-      border: none;
-      color: #0f172a;
-      padding: 12px 28px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-    }
-
-    .popup {
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
-      animation: popUp 0.8s ease;
-      max-width: 800px;
-    }
-
-    @keyframes popUp {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
     .skill {
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      color: #f1f5f9;
-      transition: 0.3s;
+      background:rgba(56,189,248,0.1); border:1px solid #38bdf8;
+      border-radius:12px; padding:15px 25px; margin:10px;
+      font-weight:500; color:#38bdf8; transition:all .3s ease;
     }
-
-    .skill:hover {
-      background: rgba(56, 189, 248, 0.25);
-      transform: scale(1.05);
+    .skill:hover {background:#38bdf8; color:#0f172a; transform:scale(1.05);}
+    /* Socials */
+    #contact .socials {
+      margin-top:25px; display:flex; justify-content:center; gap:25px;
     }
-
-    .socials {
-      margin-top: 1.5rem;
-    }
-
     .socials a {
-      font-size: 2rem;
-      margin: 0 10px;
-      color: #f1f5f9;
-      transition: 0.3s;
+      color:#38bdf8; font-size:1.9rem; transition:transform .3s, color .3s;
     }
-
-    .socials a:hover {
-      color: #38bdf8;
-      transform: scale(1.2);
-    }
-
+    .socials a:hover {transform:scale(1.2); color:#0ea5e9;}
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      text-align: center;
-      padding: 0.8rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
-      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      background:#0f172a; padding:30px 0; text-align:center;
+      border-top:1px solid rgba(255,255,255,0.1);
+      font-size:.9rem; color:#94a3b8;
     }
-
-    /* animasi background */
-    .bg-glow {
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
-      border-radius: 50%;
-      animation: float 8s ease-in-out infinite;
-      filter: blur(60px);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(80px, 50px); }
+    @media (max-width:768px){
+      header{padding:10px 20px;}
+      h2{font-size:1.6rem;}
+      p{font-size:1rem;}
+      .skill{padding:10px 18px;}
     }
   </style>
 </head>
 <body>
-
-  <div class="bg-glow"></div>
-
   <header>
-    <h1>RisnaTech</h1>
+    <h1>Risna<span style="color:#94a3b8;">.Tech</span></h1>
     <nav>
-      <a href="#" onclick="showSection('home')">Home</a>
-      <a href="#" onclick="showSection('about')">Tentang</a>
-      <a href="#" onclick="showSection('skills')">Keahlian</a>
-      <a href="#" onclick="showSection('contact')">Kontak</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">Tentang</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#contact">Kontak</a>
     </nav>
   </header>
 
-  <!-- HOME -->
-  <section id="home" class="active">
-    <div class="popup hero">
-      <h2>Halo, Saya Risna 👋</h2>
-      <p>Pelajar yang bersemangat mengeksplorasi dunia teknologi baru. Di sini saya berbagi perjalanan belajar dan proyek yang saya kembangkan.</p>
-      <button class="btn" onclick="showSection('about')">Lihat Tentang Saya</button>
-    </div>
+  <section id="home">
+    <h2>Halo, Saya Risna 👋</h2>
+    <p>
+      Selamat datang di dunia kecil saya di internet!  
+      Saya adalah seorang pelajar yang sedang mendalami dunia teknologi dan desain digital.  
+      Saya percaya bahwa teknologi bukan hanya tentang kode, tapi tentang menciptakan solusi yang memudahkan hidup manusia.  
+      Lewat portofolio ini, saya ingin berbagi perjalanan belajar saya dalam memahami dan mengembangkan kemampuan di bidang teknologi modern.
+    </p>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
-    <div class="popup">
-      <h2>Tentang Saya</h2>
-      <p>Saya adalah seorang pelajar yang mencintai dunia teknologi dan desain.  
-      Saya percaya bahwa teknologi bukan hanya tentang kode, tapi tentang bagaimana kita menciptakan sesuatu yang berarti bagi manusia.</p>
-      <p>Saya gemar membuat proyek kecil yang menggabungkan kreativitas, logika, dan keingintahuan.  
-      Tujuan saya adalah terus belajar dan berkembang di dunia digital yang terus berubah ini.</p>
-      <button class="btn" onclick="showSection('skills')">Lihat Keahlian</button>
-    </div>
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya, Risna, adalah seorang pelajar yang gemar bereksperimen dengan ide-ide baru dan menjelajahi teknologi masa kini.  
+      Ketertarikan saya dimulai dari rasa penasaran bagaimana aplikasi dan sistem bekerja di balik layar.  
+      Dari situ, saya mulai belajar memahami konsep UI/UX, berpikir kritis, dan memecahkan masalah menggunakan logika.  
+      Saya juga aktif mengikuti perkembangan dunia startup dan teknologi terbaru seperti AI, desain interaktif, dan pengembangan web.  
+      Di luar dunia teknologi, saya suka membaca, mendesain poster digital, dan menggambar ide yang saya temukan dalam keseharian.  
+      Visi saya adalah menjadi seseorang yang bisa membawa inovasi bermanfaat dan menginspirasi pelajar lain untuk percaya diri mengejar impiannya.
+    </p>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
-    <div class="popup">
-      <h2>Keahlian Saya</h2>
-      <div class="skills-list">
-        <div class="skill">UI/UX Design</div>
-        <div class="skill">Creative Thinking</div>
-        <div class="skill">Figma Prototype</div>
-        <div class="skill">Canva Design</div>
-        <div class="skill">Web Research</div>
-        <div class="skill">Team Collaboration</div>
-      </div>
-      <button class="btn" onclick="showSection('contact')">Hubungi Saya</button>
+    <h2>Keahlian & Minat</h2>
+    <p>
+      Dalam perjalanan belajar, saya berfokus pada bidang desain, analisis logika, dan eksplorasi teknologi baru.  
+      Saya percaya bahwa kreativitas dan teknologi bisa bersatu untuk menciptakan sesuatu yang luar biasa.
+    </p>
+    <div class="skills-container">
+      <div class="skill">UI/UX Design</div>
+      <div class="skill">Prototyping Figma</div>
+      <div class="skill">Desain Poster Digital</div>
+      <div class="skill">Canva Expert</div>
+      <div class="skill">Teamwork & Komunikasi</div>
+      <div class="skill">Critical Thinking</div>
+      <div class="skill">Creative Problem Solving</div>
+      <div class="skill">Adaptif dengan Teknologi Baru</div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
-    <div class="popup">
-      <h2>Hubungi Saya</h2>
-      <p>Yuk, berkolaborasi atau sekadar berbagi ide seputar dunia teknologi!</p>
-      <div class="socials">
-        <a href="mailto:risna@example.com" title="Email"><i class="ri-mail-line"></i></a>
-        <a href="https://github.com/risna" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
-        <a href="https://figma.com" target="_blank" title="Figma"><i class="ri-figma-fill"></i></a>
-        <a href="https://instagram.com/risna" target="_blank" title="Instagram"><i class="ri-instagram-line"></i></a>
-      </div>
+    <h2>Kontak & Media</h2>
+    <p>
+      Tertarik untuk berdiskusi, berkolaborasi, atau sekadar berbagi ide?  
+      Jangan ragu untuk menghubungi saya melalui media sosial di bawah ini.  
+      Saya senang bertemu dengan orang-orang yang punya semangat belajar dan berinovasi.
+    </p>
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.figma.com/" target="_blank" title="Figma"><i class="fab fa-figma"></i></a>
+      <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:risna@example.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
 
   <footer>
-    © 2025 Risna | Dibuat dengan 💙 oleh pelajar teknologi masa depan.
+    © 2025 Risna | Dibuat dengan semangat belajar & eksplorasi teknologi 💙
   </footer>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
 
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+          section.classList.add("visible");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

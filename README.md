@@ -116,7 +116,7 @@
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      background: #fff;
+      background: #ffffff;
       color: #000;
       border: none;
       border-radius: 50%;
@@ -126,6 +126,7 @@
       cursor: pointer;
       box-shadow: 0 4px 15px rgba(0,0,0,0.25);
       transition: all 0.3s;
+      z-index: 999;
     }
 
     .switcher:hover {
@@ -184,7 +185,7 @@
   <button class="switcher" onclick="switchTheme()">🌓</button>
 
   <script>
-    // Ganti tema Dark <-> Bright
+    // Fungsi untuk ganti tema Dark <-> Bright
     const theme = document.getElementById('theme');
     function switchTheme() {
       if (theme.classList.contains('dark')) {
@@ -196,7 +197,7 @@
       }
     }
 
-    // Jalankan animasi saat scroll
+    // Animasi fade saat scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

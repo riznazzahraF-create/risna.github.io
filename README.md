@@ -18,7 +18,7 @@ Saya suka:
 - 🎨 Mendesain tampilan web yang estetis dan responsif
 - 🚀 Menjelajahi teknologi baru dan belajar mandiri
 
-> “Koding bukan tentang menjadi jenius, tapi tentang terus mencoba hingga berhasil.” — Risna 💙
+> “Ga harus dilihat orang untuk jadi Hebat.” — Risna 
 
 ---
 
@@ -28,8 +28,6 @@ Saya suka:
   <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/UI%2FUX%20Design-6C63FF?style=for-the-badge&logo=adobe&logoColor=white" />
-  <img src="https://img.shields.io/badge/Creative%20Thinking-FFB300?style=for-the-badge&logo=cliqz&logoColor=white" />
 </p>
 
 ---

@@ -42,19 +42,6 @@ Game edukatif berbasis logika dengan mode puzzle & clue.
 Landing page modern dengan desain elegan berbasis HTML, CSS, dan JavaScript.  
 > Dibuat untuk menampilkan karya dan latihan front-end yang menarik.
 
-### 📱 [Mini App Desain UI](#)
-Eksperimen tampilan UI interaktif dan animasi ringan.  
-> Fokus pada kombinasi warna, tata letak, dan pengalaman pengguna.
-
----
-
-## 📊 Statistik GitHub
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=USERNAME_KAMU&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=USERNAME_KAMU&theme=tokyonight&hide_border=true" width="48%" />
-</p>
-
 ---
 
 ## 🌈 Fun Fact & Hobi
@@ -72,7 +59,7 @@ Eksperimen tampilan UI interaktif dan animasi ringan.
 - 🔹 Membuat platform belajar interaktif untuk pelajar  
 - 🔹 Menggabungkan logika, seni, dan teknologi dalam satu karya yang membara 🌟  
 
-> “Langkah kecil hari ini akan jadi lompatan besar di masa depan.” — 🌙  
+> “gapapa ketinggalan start, tapi harus sampai finish!.” — 🌙  
 
 ---
 
